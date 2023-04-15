@@ -4,8 +4,8 @@ import requests
 import json
 import sqlite3
 
-bot = telebot.TeleBot('6054469955:AAHEO3G3W4EaBWZZgWHuP81Q1efcfV4ZyFE')
-API = '3d343d1df7aa7afa6246dae7744467a8'
+bot = telebot.TeleBot('')
+API = ''
 
 
 @bot.message_handler(commands=['start', 'lang'])
