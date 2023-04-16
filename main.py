@@ -74,12 +74,9 @@ def data(call):
 def get_weather(message):
     conn = sqlite3.connect('data.sql')
     cur = conn.cursor()
-    cur.execute('SELECT * FROM users')
-    users = cur.fetchall()
-    lang = ''
-    for el in users:
-        if el[0] == message.from_user.id:
-            lang = el[-1]
+    cur.execute('SELECT lang FROM users WHERE id = "%s"'% message.from_user.id)
+    lang = cur.fetchall()
+    lang = lang[0][0]
     cur.close()
     conn.close()
 
